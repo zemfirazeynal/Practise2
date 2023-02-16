@@ -9,13 +9,13 @@ public class FileIOStream {
     public static void main(String[] args) {
 
         try{
-            FileInputStream fis = new FileInputStream("src/Files_3/input.txt");
-            int i = fis.read();
+            FileInputStream fileInputStream = new FileInputStream("src/Files_3/input.txt");
+            int i = fileInputStream.read();
             while(i!=-1) {
                 System.out.print((char) i);
-                i = fis.read();
+                i = fileInputStream.read();
             }
-            fis.close();
+            fileInputStream.close();
         }catch(IOException e){
             e.printStackTrace();
         }
@@ -24,11 +24,11 @@ public class FileIOStream {
         System.out.println("---------------");
 
         try{
-            String data = "Salam Dunya";
-            FileOutputStream fos = new FileOutputStream("src/Files_3/output.txt");
+            String data = "I am FileOutputStream operation";
+            FileOutputStream fileOutputStream = new FileOutputStream("src/Files_3/output.txt", true);
             byte [] bytes = data.getBytes(StandardCharsets.UTF_8);
-            fos.write(bytes);
-            fos.close();
+            fileOutputStream.write(bytes);
+            fileOutputStream.close();
         }catch (IOException e){
             e.printStackTrace();
         }
